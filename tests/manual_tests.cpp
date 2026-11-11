@@ -3,10 +3,10 @@
 #include <stdexcept>
 #include <string>
 
-#include "deque.h"
-#include "queue.h"
-#include "stack.h"
-#include "two_stacks.h"
+#include "task_10_1_1_stack.h"
+#include "task_10_1_2_two_stacks.h"
+#include "task_10_1_4_queue_checked.h"
+#include "task_10_1_5_deque.h"
 
 namespace {
 

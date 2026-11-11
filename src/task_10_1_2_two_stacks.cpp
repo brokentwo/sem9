@@ -1,4 +1,4 @@
-#include "two_stacks.h"
+#include "task_10_1_2_two_stacks.h"
 
 #include <stdexcept>
 

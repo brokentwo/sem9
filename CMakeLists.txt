@@ -8,10 +8,11 @@ add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 # общая библиотека: стек, два стека, очередь, дек и вывод массива
 add_library(structures
     src/visual.cpp
-    src/stack.cpp
-    src/two_stacks.cpp
-    src/queue.cpp
-    src/deque.cpp
+    src/task_10_1_1_stack.cpp
+    src/task_10_1_2_two_stacks.cpp
+    src/task_10_1_3_queue.cpp
+    src/task_10_1_4_queue_checked.cpp
+    src/task_10_1_5_deque.cpp
     src/tasks.cpp)
 target_include_directories(structures PUBLIC include)
 

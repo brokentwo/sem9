@@ -1,4 +1,4 @@
-#include "queue.h"
+#include "task_10_1_3_queue.h"
 
 #include <stdexcept>
 
@@ -8,12 +8,11 @@ namespace {
 
 constexpr int kMinQueueLength = 2;
 
-// Следующий номер ячейки по кругу: после n идёт 1.
+}  // namespace
+
 int next_index(const Queue& q, int i) {
     return i == q.length ? 1 : i + 1;
 }
-
-}  // namespace
 
 Queue make_queue(int n) {
     if (n < kMinQueueLength) {
@@ -44,32 +43,6 @@ int dequeue_unchecked(Queue& q) {
         q.head = q.head + 1;
     }
     return x;
-}
-
-bool queue_empty(const Queue& q) {
-    return q.head == q.tail;
-}
-
-bool queue_full(const Queue& q) {
-    return next_index(q, q.tail) == q.head;
-}
-
-int queue_size(const Queue& q) {
-    return (q.tail - q.head + q.length) % q.length;
-}
-
-void enqueue(Queue& q, int x) {
-    if (queue_full(q)) {
-        throw std::overflow_error("overflow");
-    }
-    enqueue_unchecked(q, x);
-}
-
-int dequeue(Queue& q) {
-    if (queue_empty(q)) {
-        throw std::underflow_error("underflow");
-    }
-    return dequeue_unchecked(q);
 }
 
 void print_queue(const Queue& q, const std::string& name) {

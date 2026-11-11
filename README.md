@@ -32,11 +32,21 @@ cmake --build build
 
 ## Структура
 
-```
-include/  visual.h  stack.h  two_stacks.h  queue.h  deque.h  tasks.h
-src/      visual.cpp stack.cpp two_stacks.cpp queue.cpp deque.cpp tasks.cpp main.cpp
-tests/    manual_tests.cpp
-```
+Код каждого задания — в паре файлов с номером задания в имени:
+
+| Задание | Реализация | Интерфейс |
+|---|---|---|
+| 10.1.1 — стек | `src/task_10_1_1_stack.cpp` | `include/task_10_1_1_stack.h` |
+| 10.1.2 — два стека в одном массиве | `src/task_10_1_2_two_stacks.cpp` | `include/task_10_1_2_two_stacks.h` |
+| 10.1.3 — очередь (как в учебнике) | `src/task_10_1_3_queue.cpp` | `include/task_10_1_3_queue.h` |
+| 10.1.4 — очередь с проверками | `src/task_10_1_4_queue_checked.cpp` | `include/task_10_1_4_queue_checked.h` |
+| 10.1.5 — дек | `src/task_10_1_5_deque.cpp` | `include/task_10_1_5_deque.h` |
+
+Вспомогательные файлы:
+- `src/visual.cpp` — рисует массив в терминале в стиле рис. 10.1 и 10.2;
+- `src/tasks.cpp` — для каждого задания выполняет операции из условия и печатает шаги;
+- `src/main.cpp` — только вызывает задания;
+- `tests/manual_tests.cpp` — проверочные сценарии.
 
 ## Обработка ошибок
 
@@ -53,11 +63,10 @@ tests/    manual_tests.cpp
 |---|---|---|
 | 10.1.1 | Стек S[1..6]: PUSH 4, 1, 3, POP, PUSH 8, POP | `make_stack`, `stack_empty`, `push`, `pop`, `print_stack` |
 | 10.1.2 | Два стека в одном массиве A[1..n] | `make_two_stacks`, `push1`, `push2`, `pop1`, `pop2`, `size1`, `size2` |
-| 10.1.3 | Очередь Q[1..6]: ENQUEUE 4, 1, 3, DEQUEUE, ENQUEUE 8, DEQUEUE | `make_queue`, `enqueue_unchecked`, `dequeue_unchecked`, `print_queue` |
-| 10.1.4 | ENQUEUE / DEQUEUE с проверкой переполнения и опустошения | `queue_empty`, `queue_full`, `enqueue`, `dequeue` |
+| 10.1.3 | Очередь Q[1..6]: ENQUEUE 4, 1, 3, DEQUEUE, ENQUEUE 8, DEQUEUE | `make_queue`, `enqueue_unchecked`, `dequeue_unchecked`, `next_index`, `print_queue` |
+| 10.1.4 | ENQUEUE / DEQUEUE с проверкой переполнения и опустошения | `queue_empty`, `queue_full`, `queue_size`, `enqueue`, `dequeue` |
 | 10.1.5 | Дек: вставка и удаление с обоих концов за O(1) | `make_deque`, `push_front`, `push_back`, `pop_front`, `pop_back` |
 
-Вывод массива в стиле рисунков — `print_array` (`visual.h`), запуск заданий — `tasks.h`.
 
 ### 10.1.1 — результат
 
